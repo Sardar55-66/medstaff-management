@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import type React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import DoctorsPage from './pages/DoctorsPage';
+import NursesPage from './pages/NursesPage';
+import AddUserPage from './pages/AddUserPage';
+import { UserProvider } from './context/StaffContext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => (
+  <UserProvider>
+    <Router>
+      <Header />
+      <main className="container mx-auto py-4">
+        <Routes>
+          <Route path="/doctors" element={<DoctorsPage />} />
+          <Route path="/nurses" element={<NursesPage />} />
+          
+        </Routes>
+        <AddUserPage />
+      </main>
+    </Router>
+  </UserProvider>
+);
 
 export default App;
