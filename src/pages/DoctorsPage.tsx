@@ -69,7 +69,7 @@ const DoctorsPage: React.FC = () => {
               <th className="border border-gray-300 px-4 py-2">Фамилия</th>
               <th className="border border-gray-300 px-4 py-2">Отделение</th>
               <th className="border border-gray-300 px-4 py-2">Должность</th>
-              <th className="border border-gray-300 px-4 py-2">Заведующий</th>
+              <th className="border border-gray-300 px-2 text-left">Заведующий отделением</th>
               <th className="border border-gray-300 px-4 py-2">Действия</th>
             </tr>
           </thead>
@@ -152,7 +152,7 @@ const DoctorsPage: React.FC = () => {
                   <td className="border border-gray-300 px-4 py-2">
                     {doctor.role === 'doctor' ? 'Врач' : 'Медсестра'}
                   </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
+                  <td className="border border-gray-300 px-4 py-2 text-left">
                     {doctor.isHeadOfDepartment ? 'да' : 'нет'}
                   </td>
                   <td className="border border-gray-300 px-4 py-2 flex">
